@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-dm-sans), sans-serif;
+  /* --color-bg-default: #F5F4ED; */
+  --color-text-default: #262626;
+}
