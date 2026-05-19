@@ -5,7 +5,7 @@ import "./globals.css";
 const dmSans = DM_Sans({
   subsets: ["latin"],
   variable: "--font-dm-sans",
-  display: "swap"
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -21,8 +21,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      // className={`${dmSans.variable} antialiased bg-bg-default text-text-default`}
-      className={`${dmSans.variable} antialiased text-text-default`}
+      className={`${dmSans.variable} antialiased bg-bg-default text-text-default`}
     >
       <body className="min-h-screen flex flex-col">
         <main className="flex-1">{children}</main>
