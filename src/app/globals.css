@@ -2,6 +2,10 @@
 
 @theme {
   --font-sans: var(--font-dm-sans), sans-serif;
-  --color-bg-default: #F5F4ED;
+  --color-bg-default: #f5f4ed;
   --color-text-default: #262626;
+}
+
+button {
+  cursor: pointer;
 }

@@ -1,14 +1,6 @@
-export default function DayPanel() {
-  const days = [
-    { d: "Sun", dt: "17 May" },
-    { d: "Mon", dt: "18 May" },
-    { d: "Tue", dt: "19 May" },
-    { d: "Wed", dt: "20 May" },
-    { d: "Thu", dt: "21 May" },
-    { d: "Fri", dt: "22 May" },
-    { d: "Sat", dt: "23 May" },
-  ];
+import { days } from "@/src/mocks/days";
 
+export default function DayPanel() {
   const activeDay = 1;
 
   return (

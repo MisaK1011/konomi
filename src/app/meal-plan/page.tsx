@@ -1,8 +1,9 @@
-import DayPanel from "./mobile/day-panel";
-import Footer from "./mobile/footer";
-import Header from "./mobile/header";
-import Indicator from "./mobile/indicator";
-import Meals from "./mobile/meals";
+import MealsTable from "./parts/meals-table";
+import DayPanel from "./parts/day-panel";
+import Footer from "./parts/footer";
+import Header from "./parts/header";
+import Indicator from "./parts/indicator";
+import MealsCard from "./parts/meals-card";
 
 export default function Page() {
   return (
@@ -13,7 +14,16 @@ export default function Page() {
           <Header />
           <Indicator />
           <DayPanel />
-          <Meals />
+          <MealsCard dayIndex={1} />
+          <Footer />
+        </div>
+      </div>
+      {/* display size md~ */}
+      <div className="hidden md:block">
+        <div className="mx-auto md:w-[95%] lg:w-[92%] pt-10">
+          <Header />
+          <Indicator />
+          <MealsTable />
           <Footer />
         </div>
       </div>
