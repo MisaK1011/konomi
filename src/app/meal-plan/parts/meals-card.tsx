@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { X, Plus } from "lucide-react";
-import AddRecipeModal from "../../../components/modal/AddRecipeModal";
+import AddRecipeModal from "../../../components/meal-plan/AddRecipeModal";
 import { meals } from "../../../mocks/meals";
 import { mealColors } from "../../../mocks/meal-colors";
 
