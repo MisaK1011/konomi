@@ -22,7 +22,7 @@ export default function TextInput({
   type,
 }: Props) {
   return (
-    <>
+    <div>
       <label htmlFor={id} className="flex text-gray-600">
         {name}
         {isRequired && <RequiredMark />}
@@ -31,8 +31,8 @@ export default function TextInput({
         id={id}
         type={type}
         placeholder={placeholder}
-        className={`w-full rounded-md border border-gray-300 pl-3.5 py-1.5 mt-0.5 ${className}`}
+        className={`w-full rounded-md border border-gray-300 px-3.5 py-1.5 mt-0.5 ${className}`}
       />
-    </>
+    </div>
   );
 }

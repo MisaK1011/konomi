@@ -12,6 +12,7 @@ type Props = {
   onChange?: (value: string) => void;
   isRequired?: boolean;
   rows?: number;
+  showLabel?: boolean;
 };
 
 export default function Textarea({
@@ -23,6 +24,7 @@ export default function Textarea({
   onChange,
   isRequired = false,
   rows = 5,
+  showLabel = true,
 }: Props) {
   const ref = useRef<HTMLTextAreaElement>(null);
   const [internalValue, setInternalValue] = useState("");
@@ -43,8 +45,11 @@ export default function Textarea({
   };
 
   return (
-    <>
-      <label htmlFor={id} className="flex text-gray-600 mt-2.5">
+    <div>
+      <label
+        htmlFor={id}
+        className={showLabel ? "flex text-gray-600 mt-2.5" : "sr-only"}
+      >
         {name}
         {isRequired && <RequiredMark />}
       </label>
@@ -55,9 +60,9 @@ export default function Textarea({
         value={value}
         onChange={handleChange}
         placeholder={placeholder}
-        className={`w-full rounded-md mt-0.5 border border-gray-300 pl-3.5 py-1.5 ${className}`}
+        className={`w-full rounded-md mt-0.5 border border-gray-300 px-3.5 py-1.5 ${className}`}
         rows={rows}
       />
-    </>
+    </div>
   );
 }

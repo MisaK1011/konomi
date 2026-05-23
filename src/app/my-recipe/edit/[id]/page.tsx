@@ -1,3 +1,7 @@
+"use client";
+
+import { useState } from "react";
+
 import { Plus } from "lucide-react";
 import { ArrowLeft } from "lucide-react";
 import Divider from "@/src/components/ui/Divider";
@@ -9,8 +13,35 @@ import SectionTitle from "@/src/components/my-recipe/SectionTitle";
 import SectionWrapper from "@/src/components/my-recipe/SectionWrapper";
 import FileInput from "@/src/components/form/FileInput";
 import FormWrapper from "@/src/components/my-recipe/FormWrapper";
+import { units } from "@/src/mocks/units";
+
+type Ingredient = {
+  name: string;
+  quantity: string;
+  unit: string;
+};
+
+type Step = {
+  text: string;
+};
 
 export default function Page() {
+  const [ingredients, setIngredients] = useState<Ingredient[]>([
+    { name: "", quantity: "", unit: "" },
+  ]);
+
+  const [steps, setSteps] = useState<Step[]>([{ text: "" }]);
+
+  const addIngredient = () => {
+    if (ingredients.length > 30) return;
+    setIngredients((prev) => [...prev, { name: "", quantity: "", unit: "" }]);
+  };
+
+  const addStep = () => {
+    if (steps.length > 15) return;
+    setSteps((prev) => [...prev, { text: "" }]);
+  };
+
   return (
     <div className="w-[92%] pt-6 md:w-[95%] lg:w-[92%] md:pt-10 mx-auto">
       <div className="flex flex-row gap-8 items-center justify-between">
@@ -128,11 +159,72 @@ export default function Page() {
           {/* Ingredients */}
           <SectionWrapper>
             <SectionTitle title="Ingredients" />
-          </SectionWrapper>
+            {ingredients.map((ingredient, index) => (
+              <FormWrapper key={index} className="grid grid-cols-3 gap-3">
+                {/* Name */}
+                <TextInput
+                  id={`ingredient-name-${index}`}
+                  type="text"
+                  name="Name"
+                  placeholder="Salmon"
+                />
 
+                {/* Quantity */}
+                <TextInput
+                  id={`quantity-${index}`}
+                  type="number"
+                  name="Quantity"
+                  placeholder="2"
+                />
+
+                {/* Unit */}
+                <Select
+                  id={`unit-${index}`}
+                  name="Unit"
+                  value=""
+                  options={units.map((unit) => ({
+                    label: unit.value,
+                    value: unit.value,
+                  }))}
+                />
+              </FormWrapper>
+            ))}
+            <button className="border border-gray-300 px-3 py-2 rounded-lg mt-2">
+              <Plus
+                className="size-4 text-gray-400"
+                onClick={() => addIngredient()}
+              />
+            </button>
+          </SectionWrapper>
           {/* Steps */}
           <SectionWrapper>
             <SectionTitle title="Steps" />
+            <FormWrapper className="grid grid-cols-3 gap-3">
+              {steps.map((step, index) => (
+                <div key={index} className="grid gap-2">
+                  <span className="inline-flex items-center justify-center bg-gray-800 text-gray-100 rounded-full size-6 text-sm">
+                    {index + 1}
+                  </span>
+                  <FileInput />
+                  <Textarea
+                    id={`text-${index}`}
+                    name="Text"
+                    placeholder={
+                      index === 0
+                        ? "Pat dry the salmon fillet and season both sides with salt, pepper, and olive oil."
+                        : ""
+                    }
+                    showLabel={false}
+                  />
+                </div>
+              ))}
+            </FormWrapper>
+            <button className="border border-gray-300 px-3 py-2 rounded-lg mt-2">
+              <Plus
+                className="size-4 text-gray-400"
+                onClick={() => addStep()}
+              />
+            </button>
           </SectionWrapper>
         </div>
       </div>
