@@ -5,6 +5,7 @@ import { X, Plus } from "lucide-react";
 import AddRecipeModal from "../../../components/meal-plan/AddRecipeModal";
 import { meals } from "../../../mocks/meals";
 import { mealColors } from "../../../mocks/meal-colors";
+import ButtonWithLeftIcon from "@/src/components/ui/ButtonWithIcon";
 
 export default function MealsCard({ dayIndex }: { dayIndex: number }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -45,13 +46,14 @@ export default function MealsCard({ dayIndex }: { dayIndex: number }) {
                   );
                 })}
                 <div className="flex">
-                  <button
+                  <ButtonWithLeftIcon
+                    name="Add recipe"
+                    icon={Plus}
+                    variant="secondary"
                     onClick={() => setIsOpen(true)}
-                    className="w-full flex border items-center justify-center border-gray-200 border-dashed rounded-md py-1 px-1.5"
-                  >
-                    <Plus className="size-4 text-gray-500 mr-1.5" />
-                    <p>Add recipe</p>
-                  </button>
+                    className="border-dashed w-full justify-center"
+                    size="medium"
+                  />
                 </div>
               </div>
             </div>

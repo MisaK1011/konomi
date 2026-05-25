@@ -14,6 +14,7 @@ import SectionWrapper from "@/src/components/my-recipe/SectionWrapper";
 import FileInput from "@/src/components/form/FileInput";
 import FormWrapper from "@/src/components/my-recipe/FormWrapper";
 import { units } from "@/src/mocks/units";
+import ButtonWithLeftIcon from "@/src/components/ui/ButtonWithIcon";
 
 type Ingredient = {
   name: string;
@@ -45,14 +46,13 @@ export default function Page() {
   return (
     <div className="w-[92%] pt-6 md:w-[95%] lg:w-[92%] md:pt-10 mx-auto">
       <div className="flex flex-row gap-8 items-center justify-between">
-        <button className="flex border rounded-md border-gray-500 py-2 px-3 lg:py-2.5 lg:px-3.5">
-          <ArrowLeft className="size-4  lg:size-6 text-gray-500" />
-          <p className="pl-2">Back</p>
-        </button>
-        <button className="flex border rounded-md border-gray-500 py-2 px-3 lg:py-2.5 lg:px-3.5">
-          <Plus className="size-4  lg:size-6 text-gray-500" />
-          <p className="pl-2">Add recipe</p>
-        </button>
+        <ButtonWithLeftIcon
+          name="Back"
+          icon={ArrowLeft}
+          variant="secondary"
+          onClick={() => {}}
+        />
+        <ButtonWithLeftIcon name="Add recipe" icon={Plus} onClick={() => {}} />
       </div>
 
       <div className="mt-2.5 mb-1.5">

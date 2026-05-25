@@ -1,3 +1,6 @@
+"use client";
+
+import ButtonWithIcon from "@/src/components/ui/ButtonWithIcon";
 import Tag from "@/src/components/ui/Tag";
 import { recipes } from "@/src/mocks/recipes";
 import { Clock, Pencil } from "lucide-react";
@@ -7,15 +10,12 @@ import Link from "next/link";
 export default function Page() {
   return (
     <>
-      <div className="flex justify-between w-[92%] pt-6 md:w-[95%] lg:w-[92%] md:pt-10 mx-auto">
+      <div className="flex items-center justify-between w-[92%] pt-6 md:w-[95%] lg:w-[92%] md:pt-10 mx-auto">
         <div>
           <h1 className="font-bold text-xl lg:text-2xl">My recipe</h1>
           <p className="text-sm text-gray-500">16 recipes</p>
         </div>
-        <button className="flex border border-gray-900 bg-black rounded-lg text-xs text-white items-center px-3 py-1 lg:text-sm lg:px-3.5 lg:py-1.5">
-          <Pencil className="mr-2 size-5 text-gray-200" />
-          Add recipe
-        </button>
+        <ButtonWithIcon name="Add recipe" icon={Pencil} onClick={() => {}} />
       </div>
       <div className="grid grid-cols-2 gap-px md:grid-cols-4 md:w-[95%] pt-4 lg:w-[92%] md:mx-auto">
         {recipes.map((recipe) => {

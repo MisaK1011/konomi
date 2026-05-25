@@ -1,9 +1,10 @@
 "use client";
 
 import { recipes } from "@/src/mocks/recipes";
-import { X, Check, Clock, Search } from "lucide-react";
+import { X, Check, Clock, Search, Plus } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
+import ButtonWithIcon from "../ui/ButtonWithIcon";
 
 type AddRecipeModalProps = {
   isOpen: boolean;
@@ -111,12 +112,13 @@ export default function AddRecipeModal({
 
         <div className="flex items-center justify-between">
           <p className="text-sm">0 selected</p>
-          <button
-            className="mt-4 rounded-md bg-black py-1.5 text-white px-6"
+          <ButtonWithIcon
+            name="Add"
+            icon={Plus}
             onClick={onClose}
-          >
-            Add
-          </button>
+            size="medium"
+            className="px-6 mt-2"
+          />
         </div>
       </div>
     </div>
