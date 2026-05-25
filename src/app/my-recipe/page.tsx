@@ -1,6 +1,5 @@
 "use client";
 
-import ButtonWithIcon from "@/src/components/ui/ButtonWithIcon";
 import Tag from "@/src/components/ui/Tag";
 import { PATHS } from "@/src/constants/paths";
 import { recipes } from "@/src/mocks/recipes";

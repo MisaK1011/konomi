@@ -3,7 +3,7 @@
 @theme {
   --font-sans: var(--font-dm-sans), sans-serif;
   --color-bg-default: #f5f4ed;
-  --color-text-default: #262626;
+  --color-text-default: #1a1a18;
 }
 
 button {

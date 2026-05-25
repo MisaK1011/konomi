@@ -2,12 +2,11 @@
 
 import { useState } from "react";
 import { Pencil, Plus } from "lucide-react";
-import { ArrowLeft } from "lucide-react";
 import Divider from "@/src/components/ui/Divider";
 import Textarea from "@/src/components/form/Textarea";
 import TextInput from "@/src/components/form/TextInput";
 import Select from "@/src/components/form/Select";
-import { categories } from "@/src/mocks/category";
+import { categories } from "@/src/mocks/categories";
 import SectionTitle from "@/src/components/my-recipe/SectionTitle";
 import SectionWrapper from "@/src/components/my-recipe/SectionWrapper";
 import FileInput from "@/src/components/form/FileInput";
@@ -169,11 +168,11 @@ export default function RecipeForm({ mode }: { mode: "add" | "edit" }) {
                   placeholder="Salmon"
                 />
 
-                {/* Quantity */}
+                {/* Amount */}
                 <TextInput
-                  id={`quantity-${index}`}
+                  id={`amount-${index}`}
                   type="number"
-                  name="Quantity"
+                  name="Amount"
                   placeholder="2"
                 />
 

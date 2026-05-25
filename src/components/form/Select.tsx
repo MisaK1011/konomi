@@ -36,14 +36,14 @@ export default function Select({
       <select
         id={id}
         value={value ?? ""}
-        className={`block mt-0.5 w-full rounded-md border border-gray-300 px-3 py-1.5 bg-white ${className}`}
+        className={`block mt-0.5 w-full rounded-md border border-gray-300 px-3 py-1.5 bg-white text-gray-400 ${className}`}
       >
-        <option value="" disabled>
+        <option value="" disabled className="text-gray-400">
           {placeholder}
         </option>
 
         {options.map((opt) => (
-          <option key={opt.value} value={opt.value}>
+          <option key={opt.value} value={opt.value} className="text-gray-400">
             {opt.label}
           </option>
         ))}
