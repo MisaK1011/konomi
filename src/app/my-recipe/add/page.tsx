@@ -1,5 +1,5 @@
 import RecipeForm from "@/src/components/my-recipe/RecipeForm";
 
 export default function Page() {
-  return <RecipeForm mode="edit" />;
+  return <RecipeForm mode="add" />;
 }

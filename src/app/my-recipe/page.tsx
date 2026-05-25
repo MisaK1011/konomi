@@ -2,8 +2,9 @@
 
 import ButtonWithIcon from "@/src/components/ui/ButtonWithIcon";
 import Tag from "@/src/components/ui/Tag";
+import { PATHS } from "@/src/constants/paths";
 import { recipes } from "@/src/mocks/recipes";
-import { Clock, Pencil } from "lucide-react";
+import { Clock, Plus } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -15,7 +16,13 @@ export default function Page() {
           <h1 className="font-bold text-xl lg:text-2xl">My recipe</h1>
           <p className="text-sm text-gray-500">16 recipes</p>
         </div>
-        <ButtonWithIcon name="Add recipe" icon={Pencil} onClick={() => {}} />
+        <Link
+          href={PATHS.myRecipeAdd}
+          className="flex items-center rounded-lg border py-2 px-3 lg:py-2.5 lg:px-3.5 border-gray-900 bg-black text-white"
+        >
+          <Plus className="mr-2 size-4 lg:size-6 text-gray-300" />
+          Add recipe
+        </Link>
       </div>
       <div className="grid grid-cols-2 gap-px md:grid-cols-4 md:w-[95%] pt-4 lg:w-[92%] md:mx-auto">
         {recipes.map((recipe) => {
