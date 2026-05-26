@@ -8,6 +8,9 @@ import { units } from "@/src/mocks/units";
 import { Plus } from "lucide-react";
 import ShoppingListItem from "./shoppingListItem";
 import Textarea from "@/src/components/form/Textarea";
+import BackButton from "@/src/components/ui/BackButton";
+import { PATHS } from "@/src/constants/paths";
+import Divider from "@/src/components/ui/Divider";
 
 export default function Page() {
   const total = shoppingItems.length;
@@ -16,6 +19,13 @@ export default function Page() {
 
   return (
     <div className="w-[92%] pt-6 md:w-[95%] lg:w-[92%] md:pt-10 mx-auto">
+      <div className="flex flex-row gap-8 items-center justify-between">
+        <BackButton path={PATHS.myRecipe} />
+      </div>
+
+      <div className="mt-2.5 mb-1.5">
+        <Divider />
+      </div>
       {/* Summary */}
       <div className="bg-[#eceae2] border border-gray-200 rounded-xl p-4 mb-3 flex items-center justify-between gap-3">
         <div className="flex-1">
