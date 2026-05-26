@@ -10,7 +10,7 @@ type Props = {
   value?: string;
   onChange?: (value: string) => void;
   isRequired?: boolean;
-  type: "text" | "number";
+  type: "text" | "number" | "password";
 };
 
 export default function TextInput({

@@ -9,7 +9,7 @@ export default function Nav() {
   const { visibleItems, isSettings } = useNav();
 
   return (
-    <nav className="flex items-center gap-2 text-xs">
+    <nav className="flex items-center gap-2 text-xs md:text-base md:gap-4">
       {visibleItems.map((item) => (
         <Link
           key={item.href}

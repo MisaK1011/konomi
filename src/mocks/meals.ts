@@ -15,7 +15,7 @@ type Meal = {
 };
 
 export const meals: Meal[] = [
-  // Sun
+  // Mon to Sun
   {
     meals: [
       {
@@ -39,7 +39,6 @@ export const meals: Meal[] = [
       { type: "snack", recipes: [{ id: 6, name: "Protein ball" }] },
     ],
   },
-  // Mon
   {
     meals: [
       { type: "breakfast", recipes: [{ id: 7, name: "Avocado toast" }] },
@@ -48,7 +47,6 @@ export const meals: Meal[] = [
       { type: "snack", recipes: [] },
     ],
   },
-  // Tue
   {
     meals: [
       {
@@ -69,7 +67,6 @@ export const meals: Meal[] = [
       { type: "snack", recipes: [{ id: 6, name: "Protein ball" }] },
     ],
   },
-  // Wed
   {
     meals: [
       {
@@ -90,7 +87,6 @@ export const meals: Meal[] = [
       { type: "snack", recipes: [{ id: 6, name: "Protein ball" }] },
     ],
   },
-  // Thu
   {
     meals: [
       { type: "breakfast", recipes: [{ id: 7, name: "Avocado toast" }] },
@@ -99,7 +95,6 @@ export const meals: Meal[] = [
       { type: "snack", recipes: [] },
     ],
   },
-  // Fri
   {
     meals: [
       {
@@ -120,7 +115,6 @@ export const meals: Meal[] = [
       { type: "snack", recipes: [{ id: 6, name: "Protein ball" }] },
     ],
   },
-  // Sat
   {
     meals: [
       { type: "breakfast", recipes: [{ id: 7, name: "Avocado toast" }] },
