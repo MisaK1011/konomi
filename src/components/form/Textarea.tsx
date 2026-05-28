@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
-import RequiredMark from "../ui/RequiredMark";
+import RequiredMark from "./RequiredMark";
 
 type Props = {
   id: string;

@@ -2,10 +2,8 @@
 
 import { Utensils, Calendar1, ShoppingCart, Globe } from "lucide-react";
 
-import AuthForm from "../components/login/authForm";
-import { useAuthForm } from "../hooks/useAuthForm";
+import AuthForm from "@/src/components/form/auth/AuthForm";
 export default function Page() {
-  const { tab, setTab, showPassword, togglePassword } = useAuthForm();
   return (
     <div className="min-h-screen bg-bg-default border-t border-gray-300">
       <div className="grid md:grid-cols-2 min-h-[calc(100vh-52px)]">
@@ -42,12 +40,7 @@ export default function Page() {
         </div>
 
         <div className="bg-white border-t md:border-t-0 md:border-l border-gray-200 flex items-center justify-center px-8 py-12">
-          <AuthForm
-            tab={tab}
-            setTab={setTab}
-            showPassword={showPassword}
-            onTogglePassword={togglePassword}
-          />
+          <AuthForm />
         </div>
       </div>
     </div>

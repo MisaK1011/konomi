@@ -1,6 +1,6 @@
 "use client";
 
-import RequiredMark from "../ui/RequiredMark";
+import RequiredMark from "./RequiredMark";
 
 type Option = {
   label: string;

@@ -1,6 +1,7 @@
 "use client";
 
-import RequiredMark from "../ui/RequiredMark";
+import RequiredMark from "./RequiredMark";
+import clsx from "clsx";
 
 type Props = {
   id: string;
@@ -31,7 +32,10 @@ export default function TextInput({
         id={id}
         type={type}
         placeholder={placeholder}
-        className={`w-full rounded-md border border-gray-300 px-3.5 py-1.5 mt-0.5 ${className}`}
+        className={clsx(
+          "w-full rounded-md border border-gray-300 px-3.5 py-1.5 mt-0.5",
+          className,
+        )}
       />
     </div>
   );
